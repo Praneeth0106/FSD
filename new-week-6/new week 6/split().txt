@@ -1,0 +1,26 @@
+
+🔹 How split(" ") Works?
+The split(" ") function splits a string into an array based on spaces.What Happens When Header is Incorrect?
+
+
+1️⃣ Correct Header
+javascript
+Copy
+Edit
+const authHeader = "Bearer abc.def.ghi";
+console.log(authHeader.split(" ")[1]); // Output: "abc.def.ghi"
+2️⃣ Missing Token
+javascript
+Copy
+Edit
+const authHeader = "Bearer ";
+console.log(authHeader.split(" ")[1]); // Output: undefined
+📌 This results in undefined, triggering 401 Access denied.
+
+3️⃣ Wrong Format (No "Bearer")
+javascript
+Copy
+Edit
+const authHeader = "abc.def.ghi"; 
+console.log(authHeader.split(" ")[1]); // Output: undefined
+📌 Again, undefined, leading to 401 Access denied.
